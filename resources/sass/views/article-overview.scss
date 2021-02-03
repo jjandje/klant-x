@@ -1,0 +1,27 @@
+.articles-overview {
+    &__article {
+        @include tablet() {
+            max-width: 400px;
+            margin: auto;
+            display: block;
+        }
+
+        h3 {
+            color: $darkblue;
+            min-height: 80px;
+            margin: 30px 0 10px;
+        }
+
+        p {
+            color: $darkblue;
+            min-height: 100px;
+        }
+    }
+
+    &__image {
+        height: 220px;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+}

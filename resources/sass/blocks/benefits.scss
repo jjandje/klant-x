@@ -1,0 +1,48 @@
+.benefits {
+    padding-bottom: 150px;
+
+    h3 {
+        font-size: 75px;
+        font-weight: 300;
+        margin: 150px 0;
+
+        @include tablet() {
+            padding: 50px 0;
+            font-size: 35px;
+        }
+    }
+
+    h4 {
+        font-size: 40px;
+        line-height: 50px;
+        font-weight: 500;
+        margin-bottom: 40px;
+    }
+
+    ul {
+        padding-left: 0;
+        margin-bottom: 50px;
+
+        li {
+            display: flex;
+            margin-bottom: 30px;
+            font-size: 19px;
+
+            &::before {
+                content: '';
+                mask-image: url('../images/icons/check-light.svg');
+                -webkit-mask-image: url('../images/icons/check-light.svg');
+                min-width: 22px;
+                height: 22px;
+                background-color: #237646;
+                -webkit-mask-repeat: no-repeat;
+                -webkit-mask-size: 22px;
+                margin-right: 20px;
+            }
+        }
+    }
+
+    img {
+        margin-left: -50px;
+    }
+}

@@ -1,0 +1,227 @@
+.user-info {
+    &__title {
+        font-size: 16px;
+        color: $greytitles;
+        text-transform: uppercase;
+    }
+
+    &__name {
+        font-size: 40px;
+        margin: 0;
+
+        @include tablet() {
+            font-size: 26px;
+        }
+    }
+
+    &__variable {
+        font-size: 26px;
+    }
+
+    .profile-photo {
+        max-width: 100%;
+        width: 166px;
+        height: auto;
+        border-radius: 100%;
+
+        @include tablet() {
+            margin: 0 auto 30px;
+            display: block;
+        }
+    }
+
+    // BMI DOTS
+    .dot {
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        border: 2px solid transparent;
+        display: inline-block;
+        margin-right: 5px;
+        background-color: $white;
+
+        &.green {
+            border-color: $green;
+            margin-left: 20px;
+
+            &.filled {
+                background-color: $green;
+            }
+        }
+
+        &.orange {
+            border-color: $orange;
+
+            &.filled {
+                background-color: $orange;
+            }
+        }
+
+        &.red {
+            border-color: $red;
+
+            &.filled {
+                background-color: $red;
+            }
+        }
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+}
+
+.user-goals {
+    &__title {
+        font-size: 16px;
+        color: $greytitles;
+        text-transform: uppercase;
+    }
+
+    &__variable {
+        margin: 0;
+
+        a {
+            color: $darkblue;
+        }
+    }
+
+    .progress {
+        border-radius: 10px;
+        background-color: rgba($darkblue, 0.1);
+        margin-right: 20px;
+        display: inline-block;
+        width: 60%;
+
+        .progress-bar {
+            height: 100%;
+            background-color: $darkblue;
+        }
+    }
+
+    .button {
+        padding: 10px;
+    }
+
+    #addGoal {
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease 0.3s;
+
+        &.show {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.backpack-profile-form .required::after {
+    content: ' *';
+    color: red;
+}
+
+.popup-wrapper {
+    display: none;
+
+    &.open {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 99;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .popup {
+        background-color: white;
+        border-radius: 4px;
+        padding: 50px;
+        position: relative;
+
+        .popup_close {
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            right: 15px;
+            background: transparent;
+            border: 0 none;
+            font-size: 2rem;
+        }
+
+        .popup_goals {
+            padding: 25px 0;
+        }
+
+        .popup_actions {
+            padding-top: 45px;
+        }
+    }
+
+    .select-wrap {
+        position: relative;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+
+        &::before {
+            position: absolute;
+            top: 50%;
+            right: 1.2rem;
+            display: block;
+            width: 8px;
+            height: 8px;
+            padding: 0;
+            margin-top: -4px;
+            content: "";
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 14'%3E%3Cpath fill='%2373818f' d='M9.148 2.352l-4.148 4.148 4.148 4.148q0.148 0.148 0.148 0.352t-0.148 0.352l-1.297 1.297q-0.148 0.148-0.352 0.148t-0.352-0.148l-5.797-5.797q-0.148-0.148-0.148-0.352t0.148-0.352l5.797-5.797q0.148-0.148 0.352-0.148t0.352 0.148l1.297 1.297q0.148 0.148 0.148 0.352t-0.148 0.352z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+            transform: rotate(-90deg);
+        }
+    }
+
+    select {
+        -webkit-appearance: none;
+        background-color: $white;
+        border-radius: 40px;
+        padding: 20px;
+        border: 1px solid rgba($darkblue, 0.25);
+        margin-right: 10px;
+        width: 100%;
+    }
+
+    .button {
+        @include mobile {
+            padding: 15px 20px;
+        }
+    }
+}
+
+.favorite-recipes,
+.favorite-articles {
+    &__recipe,
+    &__article {
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    &__title {
+        margin-left: 30px;
+        font-size: 26px;
+        line-height: 34px;
+        color: $darkblue;
+    }
+
+    &__image {
+        max-width: 90px;
+        max-height: 60px;
+        width: 100%;
+        height: 100%;
+    }
+}

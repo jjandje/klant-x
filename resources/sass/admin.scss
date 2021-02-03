@@ -1,0 +1,17 @@
+@import url(https://fonts.googleapis.com/css?family=DM+Sans:300,400,500,700,900&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,300,400,500,700,900&display=swap);
+
+@import
+'mixins',
+'variables',
+'global',
+'views/admin',
+'views/profile',
+'views/article-overview',
+'views/article-detail',
+'views/recipe-overview',
+'views/recipe-detail',
+'views/goals-overview',
+'views/coaches',
+'components/buttons',
+'components/filters';

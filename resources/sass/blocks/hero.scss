@@ -1,0 +1,64 @@
+.hero {
+    &--top {
+        background-image: url('../images/content/background-image-hero.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50%;
+        padding: 100px 0;
+
+        @include small-desktop {
+            padding: 50px 0;
+            background-position: 70%;
+        }
+
+        h1 {
+            margin-bottom: 50px;
+
+            @include tablet {
+                font-size: 40px;
+                line-height: 40px;
+            }
+        }
+
+        p {
+            font-size: 22px;
+            font-weight: 200;
+            margin-bottom: 40px;
+        }
+
+        .img-wrap {
+            position: absolute;
+            bottom: -200px;
+            left: 50px;
+            max-width: 808px;
+            width: 100%;
+            height: auto;
+
+            @include mobile-landscape {
+                right: 0;
+                bottom: inherit;
+                left: inherit;
+                max-width: 80%;
+            }
+
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+
+    &--bottom {
+        .arrow-down {
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            background: url('../images/icons/arrow-green-down.svg');
+            background-repeat: no-repeat;
+            background-size: 80%;
+            background-position: center;
+            width: 30px;
+            height: 50px;
+            display: block;
+        }
+    }
+}

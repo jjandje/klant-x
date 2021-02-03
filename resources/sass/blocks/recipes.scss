@@ -1,0 +1,91 @@
+.recipes {
+    background: $lightgrey;
+
+    h3 {
+        text-align: center;
+        font-size: 75px;
+        margin-bottom: 100px;
+        font-weight: 300;
+
+        @include tablet {
+            margin-bottom: 30px;
+            padding-top: 50px;
+            font-size: 35px;
+        }
+
+        @include mobile-landscape {
+            font-size: 25px;
+        }
+    }
+
+    &__intro-image {
+        max-width: 810px;
+        margin-bottom: -200px;
+
+        @include tablet {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 50px;
+        }
+    }
+
+    &__text {
+        position: relative;
+        z-index: 1;
+        padding: 5vw;
+        background: $white;
+        margin-bottom: 300px;
+        box-shadow: 4px 8px 18px rgba(0, 0, 0, 0.15);
+
+        @include mobile-landscape {
+            padding: 30px 30px 175px 30px;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            background: #ffffff;
+            right: -115vw;
+            top: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+
+        h4 {
+            font-size: 25px;
+        }
+
+        ul {
+            margin: 0;
+            padding: 45px 0 80px;
+
+            @include mobile-landscape {
+                padding: 40px 0;
+            }
+
+            li {
+                display: flex;
+                margin-bottom: 30px;
+
+                &::before {
+                    content: '';
+                    mask-image: url('../images/icons/check-light.svg');
+                    -webkit-mask-image: url('../images/icons/check-light.svg');
+                    min-width: 22px;
+                    height: 22px;
+                    background-color: #237646;
+                    -webkit-mask-repeat: no-repeat;
+                    -webkit-mask-size: 22px;
+                    margin-right: 20px;
+                }
+            }
+        }
+
+        img {
+            position: absolute;
+            bottom: -200px;
+            left: -300px;
+            background: transparent;
+        }
+    }
+}

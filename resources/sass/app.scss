@@ -1,0 +1,26 @@
+@import url(https://fonts.googleapis.com/css?family=DM+Sans:300,400,500,700,900&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,300,400,500,700,900&display=swap);
+
+@import
+'mixins',
+'variables',
+'global',
+'views/partials/header',
+'views/partials/footer',
+'views/admin',
+'views/frontpage',
+'views/login',
+'views/content-page',
+'blocks/hero',
+'blocks/usps',
+'blocks/how-it-works-hero',
+'blocks/how-it-works',
+'blocks/goals',
+'blocks/recipes',
+'blocks/prices',
+'blocks/benefits',
+'blocks/text-image',
+'blocks/contact-info',
+'blocks/title-block',
+'blocks/image-text-block',
+'components/buttons';

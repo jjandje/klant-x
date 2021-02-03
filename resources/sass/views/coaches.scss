@@ -1,0 +1,43 @@
+.coaches {
+    &__coach {
+        margin: 30px 0;
+        display: flex;
+        flex-flow: row;
+    }
+
+    &__label {
+        display: block;
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+
+    &__image {
+        max-width: 120px;
+        max-height: 120px;
+        height: auto;
+        border-radius: 100%;
+    }
+
+    &__description {
+        margin-left: 20px;
+    }
+
+    .form-row {
+        flex-flow: column;
+        align-items: start !important;
+
+        .select-wrap,
+        textarea,
+        input {
+            width: 80% !important;
+
+            @include tablet() {
+                width: 100% !important;
+            }
+        }
+    }
+
+    input.filter-checkbox {
+        width: initial !important
+    }
+}

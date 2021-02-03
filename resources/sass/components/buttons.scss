@@ -1,0 +1,113 @@
+button {
+    outline: none;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.button {
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    font-family: $secondary-font;
+    font-size: $fz-base;
+    text-transform: uppercase;
+    font-weight: 500;
+    display: inline-block;
+    color: $green;
+
+    &--primary {
+        color: $white !important;;
+        background-color: $green;
+        padding: 15px 50px;
+        border-radius: 27px;
+
+        &:hover {
+            color: $white !important;
+            background-color: $orange-hover !important;
+            text-decoration: none;
+        }
+    }
+
+    &--secondary {
+        text-transform: uppercase;
+        font-weight: 500;
+        position: relative;
+        letter-spacing: 2px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            mask-image: url("../images/icons/arrow-orange.svg");
+            -webkit-mask-image: url("../images/icons/arrow-orange.svg");
+            mask-size: 80%;
+            -webkit-mask-size: 80%;
+            mask-repeat: no-repeat;
+            -webkit-mask-repeat: no-repeat;
+            width: 30px;
+            height: 15px;
+            top: 4px;
+            right: -55px;
+            background-color: $green;
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(0);
+        }
+
+        &:hover {
+            color: $orange;
+
+            &::after {
+                background-color: $orange;
+                transform: translateX(20%);
+            }
+        }
+    }
+
+    &__previous {
+        margin: 0 55px;
+
+        &::after {
+            transform: rotate(180deg);
+            right: inherit;
+            left: -55px;
+        }
+
+        &:hover {
+            &::after {
+                transform: translateX(-20%) rotate(180deg);
+            }
+        }
+    }
+
+    .load-more {
+        margin: 0 auto;
+    }
+}
+
+.btn-primary,
+.btn-success,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.page-item.active .page-link {
+    background-color: $green;
+    border-color: $green;
+}
+
+.btn-link {
+    color: $orange;
+}
+
+.main {
+    .navbar-toggler {
+        position: absolute;
+        top: 30px;
+        background-color: $grey;
+        min-width: 50px;
+        padding: .25rem 0;
+    }
+
+    .navbar-toggler-icon {
+        height: 23px;
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%2373818f' stroke-width='2.25' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+}

@@ -1,0 +1,37 @@
+.filters {
+    margin: 50px 0 150px;
+
+    @include small-desktop() {
+        margin: 50px 0;
+    }
+
+    h3 {
+        margin: 0 15px 0 0;
+        text-transform: uppercase;
+        color: $greytitles;
+        font-size: 16px;
+    }
+
+    &__row {
+        &:first-of-type {
+            margin-bottom: 35px;
+        }
+    }
+
+    &__filter-item {
+        margin: 10px 25px;
+
+        @include small-desktop() {
+            margin: 10px;
+        }
+
+        label {
+            margin: 0 0 0 10px;
+        }
+
+        #resetFilters {
+            min-width: 100px;
+            display: block;
+        }
+    }
+}

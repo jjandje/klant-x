@@ -1,0 +1,82 @@
+.login {
+    background: $lightgrey;
+    padding: 300px 0 200px;
+
+    @include tablet() {
+        padding: 100px 0 200px;
+    }
+
+    h3 {
+        font-weight: bold;
+        font-size: 40px;
+        margin-bottom: 60px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    textarea {
+        width: 100%;
+        padding: 16px;
+        border: 0;
+        border-bottom: 2px solid $darkblue;
+        border-radius: 0;
+        background: transparent;
+
+        &.is-invalid {
+            border-color: #dc3545;
+        }
+    }
+
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        -o-appearance: none;
+        appearance: none;
+        width: 100%;
+        padding: 16px;
+        border: 0;
+        border-bottom: 2px solid $darkblue;
+        border-radius: 0;
+        background-color: transparent;
+        background: url('assets/images/icons/select.svg') no-repeat 95% center;
+        color: $placeholder;
+    }
+
+    &__name,
+    &__email,
+    &__password,
+    &__row {
+        margin-bottom: 40px;
+    }
+
+    &__checkbox {
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        label {
+            margin-top: 20px;
+            display: flex;
+            align-items: baseline;
+        }
+    }
+
+    button {
+        margin-bottom: 35px;
+
+        &:disabled {
+            opacity: 0.2;
+
+            &:hover {
+                background-color: inherit;
+            }
+        }
+    }
+
+    input[name="general-conditions"] {
+        margin-right: 5px;
+    }
+}

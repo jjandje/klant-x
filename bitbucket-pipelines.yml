@@ -1,0 +1,45 @@
+# This is a sample build configuration for PHP.
+# Check our guides at https://confluence.atlassian.com/x/e8YWN for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+image: pyguerder/bitbucket-pipelines-php74
+pipelines:
+  branches:
+    staging:
+    - step:
+        name: Deploy to staging
+        deployment: staging
+        caches:
+          - composer
+          - node
+        script:
+        - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+        - composer install
+        - apt-get install nodejs
+        - apt-get update && apt-get install -y unzip
+        - apt-get install -y npm
+        - rm -rf node_modules && npm install
+        - npm run dev
+        - npm run production
+        - apt-get install rsync -y
+        - rsync -avz -e "ssh" $BITBUCKET_CLONE_DIR/ $SFTP_USER_STAGING@$SFTP_IP_STAGING:public_html/ --no-perms --omit-dir-times
+
+    master:    
+    - step:
+        name: Deploy to master
+        deployment: master
+        caches:
+          - composer
+          - node
+        script:        
+           - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+           - composer install
+           - apt-get install nodejs
+           - apt-get update && apt-get install -y unzip
+           - apt-get install -y npm
+           - rm -rf node_modules && npm install
+           - npm run dev
+           - npm run production
+           - apt-get install rsync -y
+           - rsync -avz -e "ssh" $BITBUCKET_CLONE_DIR/ $SFTP_USER_LIVE@$SFTP_IP_LIVE:public_html/ --no-perms --omit-dir-times

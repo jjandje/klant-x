@@ -1,0 +1,143 @@
+/* Global */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+    background: $white;
+}
+
+html,
+body {
+    font-family: $primary-font;
+    overflow-x: hidden;
+    color: $darkblue;
+
+    &.fixed {
+        overflow: hidden;
+    }
+}
+
+*:focus {
+    outline: none;
+}
+
+h1 {
+    font-size: 70px;
+    line-height: 75px;
+    font-weight: 500;
+
+    @include small-desktop {
+        font-size: 5vw;
+        line-height: 5vw;
+    }
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: 400;
+}
+
+h3 {
+    font-size: 30px;
+    font-weight: 100;
+}
+
+h4 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+h5 {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li {
+    font-family: $secondary-font;
+}
+
+span,
+p {
+    font-size: $fz-base;
+    font-weight: 400;
+    line-height: $lh-base;
+}
+
+a {
+    color: $orange;
+
+    &:hover {
+        color: $green;
+        text-decoration: none;
+    }
+}
+
+.bg-green {
+    background-color: $green;
+}
+
+.bg-blue {
+    background-color: $blue;
+}
+
+.bg-beige {
+    background-color: $beige;
+}
+
+.bg-pink {
+    background-color: $pink;
+}
+
+.text-orange {
+    color: $orange;
+}
+
+.text-green {
+    color: $green;
+}
+
+.text-blue {
+    color: $blue;
+}
+
+.text-beige {
+    color: $beige;
+}
+
+.text-pink {
+    color: $pink;
+}
+
+.text-orange {
+    color: $orange;
+}
+
+@media (min-width: 1200px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 1410px;
+    }
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+.noty_body {
+    a {
+        color: white;
+        text-decoration: underline;
+    }
+}

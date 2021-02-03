@@ -1,0 +1,148 @@
+.how-it-works-hero {
+    position: relative;
+
+    @include mobile-landscape {
+        margin-bottom: -200px;
+    }
+
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 50px;
+        left: 0;
+        background: $lightgrey;
+        z-index: -1;
+    }
+
+    h1 {
+        padding-top: 134px;
+        padding-bottom: 67px;
+    }
+
+    &__card {
+        background: $white;
+        padding: 115px 90px;
+        margin-left: 14vw;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+
+        @include tablet {
+            margin-left: 0;
+            padding: 50px 30px;
+        }
+    }
+
+    &__progress {
+        display: flex;
+
+        @include mobile-landscape {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        ul {
+            margin-top: 140px;
+            position: relative;
+            padding-left: 0;
+            align-self: start;
+
+            @include mobile-landscape() {
+                margin-top: 40px;
+            }
+
+            &::after {
+                content: '';
+                display: block;
+                width: 2px;
+                height: 94%;
+                position: absolute;
+                top: 4%;
+                right: 9.5px;
+                background: $green;
+
+
+                @include mobile-landscape {
+                    height: 90%;
+                }
+            }
+
+            li {
+                list-style: none;
+                text-align: right;
+                margin-bottom: 60px;
+                font-size: 22px;
+
+                @include mobile-landscape {
+                    text-align: left;
+                    margin-bottom: 30px;
+                }
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+
+                a {
+                    color: $darkblue;
+                }
+
+                &::after {
+                    content: '';
+                    width: 21px;
+                    height: 21px;
+                    background: $white;
+                    border: 2px solid $green;
+                    border-radius: 30px;
+                    margin-left: 40px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    position: relative;
+                    z-index: 1;
+                    transition: all 0.3s ease;
+
+                    @include mobile-landscape {
+                        float: right;
+                    }
+                }
+
+                &.active {
+                    &::after {
+                        content: '';
+                        width: 21px;
+                        height: 21px;
+                        background: $green;
+                        border: 2px solid $green;
+                        border-radius: 30px;
+                    }
+                }
+            }
+        }
+    }
+
+    &__tab {
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        margin-bottom: 75px;
+
+        @include mobile-landscape {
+            margin-top: 50px;
+        }
+
+        &.active {
+            position: relative;
+            visibility: visible;
+            opacity: 1;
+        }
+
+        h2 {
+            margin-bottom: 75px;
+
+            @include mobile-landscape {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}

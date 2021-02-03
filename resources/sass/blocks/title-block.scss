@@ -1,0 +1,15 @@
+.title-block {
+    background: $white;
+
+    h3 {
+        font-size: 75px;
+        font-weight: 300;
+        margin: 150px 0;
+
+        @include small-desktop() {
+            margin: 0;
+            padding: 50px 0;
+            font-size: 35px;
+        }
+    }
+}
